@@ -23,11 +23,12 @@ export const ToastBooker = () => {
         method: 'get',
         url: `${config.slotServiceUrl}/order`,
       });
+      // :TODO: need to remove the iteration and axios call.just here to test.
       schedules.forEach((item: any) => {
         item.category = 'time';
         item.start = item.startTime;
         item.dueDateClass = '';
-        item.end = item.endTime; // new Date(item.endTime).toISOString();
+        item.end = item.endTime;
       });
       console.log('dataaaa', schedules);
       setSchedules(schedules);
@@ -37,6 +38,7 @@ export const ToastBooker = () => {
     forceUpdate({});
   }, []);
 
+  // data structure needed by toastUI..
   // const [allSchedules, setSchedules]: any = useState([{
   //   id: '1',
   //   calendarId: '0',

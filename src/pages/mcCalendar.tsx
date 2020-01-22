@@ -29,7 +29,7 @@ export const McCalendar: FC<any> = ({ onSelection }) => {
       onChange={onChangeSelected}
       onMonthChange={handleMonthChange}
       selected={selectedDates}
-      allowRange= {true}
+      allowRange= {false}
     />
   );
 };
